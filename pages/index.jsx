@@ -20,31 +20,15 @@ const Home = () => {
         />
       </Head>
       <Container maxWidth='sm' style={{ paddingTop: '15%' }}>
-        <Grid container direction='column' spacing={3}>
-          <Grid item>
-            <Typography variant='h4'>Typical Contact Form</Typography>
-          </Grid>
-          <Grid item>
-            <TextField variant='outlined' fullWidth label='Name' />
-          </Grid>
-          <Grid item>
-            <TextField variant='outlined' fullWidth label='Email' />
-          </Grid>
-          <Grid item>
-            <TextField
-              variant='outlined'
-              fullWidth
-              label='Message'
-              multiline
-              minRows={4}
-            />
-          </Grid>
-          <Grid item>
-            <Button variant='contained' size='large' fullWidth color='primary'>
-              Submit
-            </Button>
-          </Grid>
-        </Grid>
+        <form>
+          <Typography variant='h4'>Typical Contact Form</Typography>
+          <TextField label='Name' />
+          <TextField label='Email' />
+          <TextField label='Message' multiline />
+          <Button fullWidth type='submit'>
+            Submit
+          </Button>
+        </form>
       </Container>
     </>
   );
