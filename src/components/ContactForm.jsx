@@ -1,6 +1,6 @@
 import { TextField, Typography, Button } from '@material-ui/core';
 import { useForm } from 'react-hook-form';
-import { inputProps } from '../modules/adaptiveHelper';
+import { controlProps } from '../modules/adaptiveHelper';
 
 const ContactForm = () => {
   const {
@@ -16,9 +16,9 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Typography variant='h4'>Typical Contact Form</Typography>
-      <TextField {...inputProps(register, errors, 'Name')} />
-      <TextField {...inputProps(register, errors, 'Email')} />
-      <TextField {...inputProps(register, errors, 'Message')} />
+      <TextField {...controlProps(register, errors, 'Name')} />
+      <TextField {...controlProps(register, errors, 'Email')} />
+      <TextField {...controlProps(register, errors, 'Message')} />
       <Button fullWidth type='submit'>
         Submit
       </Button>

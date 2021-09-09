@@ -1,4 +1,4 @@
-export const inputProps = (register, errors, label) => {
+export const controlProps = (register, errors, label) => {
   let name = label.toLowerCase();
   return {
     label: label,
