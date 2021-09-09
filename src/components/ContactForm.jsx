@@ -12,30 +12,24 @@ const ContactForm = () => {
     alert(JSON.stringify(formData));
   };
 
-  const nameProps = {
-    label: 'Name',
-    inputProps: {
-      ...register('name', { required: 'Please enter the name.' }),
-    },
-    error: errors.name,
-    helperText: errors.name?.message,
-    autoFocus: true,
-  };
-
-  const emailProps = {
-    label: 'Email',
-  };
-
-  const messageProps = {
-    label: 'Message',
+  const formControlProps = (label) => {
+    let name = label.toLowerCase();
+    return {
+      label: label,
+      inputProps: {
+        ...register(name, { required: `Please enter the ${name}.` }),
+      },
+      error: errors[name],
+      helperText: errors[name]?.message,
+    };
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Typography variant='h4'>Typical Contact Form</Typography>
-      <TextField {...nameProps} />
-      <TextField {...emailProps} />
-      <TextField {...messageProps} />
+      <TextField {...formControlProps('Name')} />
+      <TextField {...formControlProps('Email')} />
+      <TextField {...formControlProps('Message')} />
       <Button fullWidth type='submit'>
         Submit
       </Button>
