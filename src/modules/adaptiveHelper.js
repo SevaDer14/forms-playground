@@ -3,7 +3,7 @@ export const controlProps = (register, errors, label) => {
   return {
     label: label,
     inputProps: {
-      ...register(name, { required: `Please enter the ${name}.` }),
+      ...register(name),
     },
     error: errors[name],
     helperText: errors[name]?.message,
