@@ -31,7 +31,6 @@ const ContactForm = () => {
       <TextField
         {...controlProps(register, errors, labels[2])}
         multiline
-        minRows={4}
       />
       <Button fullWidth type='submit'>
         Submit
